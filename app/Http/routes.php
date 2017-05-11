@@ -13,9 +13,15 @@
 
 Route::get('/', 'WelcomeController@index');
 
+Route::get('home', 'HomeController@index');
+
 Route::get('doExam', 'DoExamController@doexam');
 
 Route::get('meo', "WelcomeController@toMeo");
+
+Route::get('bienbao', "WelcomeController@toBienBao");
+
+Route::get('dangthi', "WelcomeController@toDangThi");
 
 Route::post('doExam', 'DoExamController@showresults');
 
@@ -24,3 +30,5 @@ Route::get('doExam/{id}','DoExamController@doexamwithid');
 Route::post('doExam/{id}', 'DoExamController@showresults');
 
 Route::get('chooseExam','WelcomeController@chooseexam');
+
+Route::get('cauhoi', 'DoExamController@showquestion');
