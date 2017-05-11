@@ -6,6 +6,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\TestOnline;
+use App\question_img;
 class DoExamController extends Controller {
 	
 		
