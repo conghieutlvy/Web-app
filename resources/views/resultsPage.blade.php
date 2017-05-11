@@ -57,3 +57,13 @@
 	echo $count;
 ?>
 @stop
+@section('pass')
+<?php
+	if ($count >= 5 && $count <=7){
+		echo "Bạn cần cố gắng hơn nữa";}
+	else if($count >= 8){
+		echo "Bạn đã có thể thi thật rồi đó";}
+	else if($count <5){ 
+		echo "Bạn không đạt rồi, cố gắng lên";}
+?>
+@stop
