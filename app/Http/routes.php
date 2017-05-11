@@ -22,3 +22,5 @@ Route::post('doExam', 'DoExamController@showresults');
 Route::get('doExam/{id}','DoExamController@doexamwithid');
 
 Route::post('doExam/{id}', 'DoExamController@showresults');
+
+Route::get('chooseExam','WelcomeController@chooseexam');
