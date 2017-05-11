@@ -108,4 +108,19 @@ class DoExamController extends Controller {
 		session_destroy();
 		return view('resultsPage')->with('res', $this->results);
 	}
+	
+	public function showquestion() {
+		
+			$temp = TestOnline::all()->toArray();			
+			$resultsDB = $temp;
+		
+		
+			$temp = question_img::all()->toArray();			
+			$resultsdbimg = $temp;
+		
+		return view('cauHoi')->with([
+			'data'=> $resultsDB,
+			'dataimg'=>$resultsdbimg
+			]);
+	}
 }
