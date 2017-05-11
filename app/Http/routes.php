@@ -18,3 +18,7 @@ Route::get('doExam', 'DoExamController@doexam');
 Route::get('meo', "WelcomeController@toMeo");
 
 Route::post('doExam', 'DoExamController@showresults');
+
+Route::get('doExam/{id}','DoExamController@doexamwithid');
+
+Route::post('doExam/{id}', 'DoExamController@showresults');
