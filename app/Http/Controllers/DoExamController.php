@@ -54,5 +54,7 @@ class DoExamController extends Controller {
 			}
 		
 		return view('doExamPage')->with('data', $resultsDB);
-	}
+		}
+		
+		public function showresults(){}
 }
