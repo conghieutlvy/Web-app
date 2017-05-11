@@ -139,5 +139,25 @@
                 }
             }
             var countdownTimer = setInterval('timer()', 1000);
+			
+			var check = new Array();
+			for(var i =0; i < 40; i++) check[i] = 0;
+			var c = [0,0,0,0,0,0,0,0,0,0];
+			function active_num(n){
+				var t = Math.floor(n/10);
+				n = Math.floor(n/10)*4  + n % 10;
+				check[n] = !check[n];
+				var temp = t*4;
+				if(check[temp] || check[temp+1] || check[temp+2] ||check[temp+3]) c[t]=1;
+				else c[t] = 0;
+				var name = "num" + t.toString();
+				var obj = document.getElementById(name);
+				if(c[t]){
+					if(!obj.hasAttribute("class"))
+						obj.setAttribute("class","active");
+				}else{
+					obj.removeAttribute("class");
+				}
+			}
 	</script> 
 @stop
