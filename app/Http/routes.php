@@ -20,3 +20,10 @@ Route::get('meo', "WelcomeController@toMeo");
 Route::get('bienbao', "WelcomeController@toBienBao");
 
 Route::get('dangthi', "WelcomeController@toDangThi");
+
+Route::get('chooseExam','WelcomeController@chooseexam');
+
+
+
+
+
