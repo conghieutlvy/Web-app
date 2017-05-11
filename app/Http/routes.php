@@ -17,3 +17,5 @@ Route::get('doExam', 'DoExamController@doexam');
 
 Route::get('meo', "WelcomeController@toMeo");
 
+Route::get('bienbao', "WelcomeController@toBienBao");
+

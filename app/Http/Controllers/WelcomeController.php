@@ -16,4 +16,10 @@ class WelcomeController extends Controller {
 		return view('meo');
 	}
 
+	public function toBienBao()
+	{
+		return view('bienBao');
+	}
+
+
 }
