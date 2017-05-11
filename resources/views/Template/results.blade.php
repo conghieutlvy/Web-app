@@ -107,5 +107,5 @@
         </div>
 	</div>
     <br /><br />
-    
+    <center><a class="btn btn-primary btn-lg" href="/">Trang chủ</a></center>
 @stop
