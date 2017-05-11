@@ -53,4 +53,20 @@ class DoExamController extends Controller {
 		
 		return view('doExamPage')->with('data', $resultsDB);
 	}
+
+	public function showquestion() {
+		$temp = TestOnline::all()->toArray();			
+		$resultsDB = $temp;
+		
+		
+		$temp = question_img::all()->toArray();			
+		$resultsdbimg = $temp;
+		
+		return view('cauHoi')->with([
+			'data'=> $resultsDB,
+			'dataimg'=>$resultsdbimg
+		]);
+	}
+
+	
 }

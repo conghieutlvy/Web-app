@@ -23,7 +23,7 @@ Route::get('dangthi', "WelcomeController@toDangThi");
 
 Route::get('chooseExam','WelcomeController@chooseexam');
 
-
+Route::get('cauhoi', 'DoExamController@showquestion');
 
 
 
