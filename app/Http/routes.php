@@ -16,5 +16,8 @@ Route::get('/', 'WelcomeController@index');
 Route::get('doExam', 'DoExamController@doexam');
 
 Route::get('meo', "WelcomeController@toMeo");
+<<<<<<< HEAD
 
 Route::post('doExam', 'DoExamController@showresults');
+=======
+>>>>>>> refs/remotes/origin/master

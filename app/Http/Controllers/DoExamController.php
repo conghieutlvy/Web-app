@@ -54,7 +54,13 @@ class DoExamController extends Controller {
 			}
 		
 		return view('doExamPage')->with('data', $resultsDB);
+<<<<<<< HEAD
 		}
 		
 		public function showresults(){}
+=======
+	}
+
+	
+>>>>>>> refs/remotes/origin/master
 }
