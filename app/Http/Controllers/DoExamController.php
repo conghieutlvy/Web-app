@@ -105,19 +105,4 @@ class DoExamController extends Controller {
 		}
 		return view('resultsPage')->with('res', $this->results);
 	}
-	
-	public function showquestion() {
-		
-			$temp = question::all();			
-			$resultsDB = $temp;
-		
-		
-			$temp = ques_img::all();			
-			$resultsdbimg = $temp;
-		
-		return view('cauHoi')->with([
-			'data'=> $resultsDB,
-			'dataimg'=>$resultsdbimg
-			]);
-	}
 }

@@ -45,9 +45,9 @@ function getanswer($number,$row, $url){
                     </div>
                     <br />
 		<?php 
-			if(isset($row["img_src"])) { ?>
+			if(isset($row["name_img"])) { ?>
             <center><img src="
-		<?php echo $url.$row["img_src"]; ?>
+		<?php echo $url.$row["name_img"]; ?>
         	" alt = ""/></center>
 		<?php }
 			?>
