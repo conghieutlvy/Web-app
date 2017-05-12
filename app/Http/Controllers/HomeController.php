@@ -54,4 +54,22 @@ class HomeController extends Controller
 	public function addadmin(){
 		return view ('register');
 	}
+	public function saveques(){
+		if(isset($_POST['question']) &&
+		isset($_POST['answer1']) && isset($_POST['answer2'])){
+			$ques = new question();
+			$ques->question = $_POST['question'];
+			$ques->c0 = $_POST['answer1'];
+			$ques->c1 = $_POST['answer2'];
+			
+			if(isset($_POST['answer3'])){
+				$ques->c2 = $_POST['answer3'];
+				if(isset($_POST['answer4']))
+				$ques->c3 = $_POST['answer4'];
+			}
+			else if(isset($_POST['answer4']))
+				$ques->c2 = $_POST['answer4'];
+		}
+		return view('addQues'); 	
+	}
 }
