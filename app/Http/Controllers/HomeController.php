@@ -51,5 +51,7 @@ class HomeController extends Controller
 	public function modifiersques($id){
 		return view('modifiersQues')->with('data',$data);
 	}
-	public function addadmin(){}
+	public function addadmin(){
+		return view ('register');
+	}
 }
