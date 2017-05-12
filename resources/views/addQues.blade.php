@@ -64,7 +64,7 @@
 						
 						<div class="form-group">
                             <center>
-								<button onclick="vaildation();" id="btadd" type="submit" class="btn btn-primary">
+								<button onclick="vailidation();" id="btadd" type="submit" class="btn btn-primary">
                                     Thêm
 								</button>
 							</center>
