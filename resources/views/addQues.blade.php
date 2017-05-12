@@ -63,12 +63,14 @@
                         </div>
 						
 						<div class="form-group"> 
-							<label for="exampleInputFile"> 
-								Thêm ảnh 
-							</label> 
-							<input type="file" id="exampleInputFile" /> 
-							<p class="help-block"> Chọn ảnh từ máy tính. 
-							</p> 
+							<label for="exampleInputFile" class="col-md-3 control-label" >  
+								Thêm ảnh: 
+							</label>
+                            <div class="col-md-7">
+                                <input type="file" id="file" name = "name_img" /> 
+                                <p class="help-block"> Chọn ảnh từ máy tính. 
+                                </p>
+                            </div> 
 						</div>
 						
 						<div class="form-group">
