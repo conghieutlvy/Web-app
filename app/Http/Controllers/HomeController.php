@@ -25,17 +25,18 @@ class HomeController extends Controller
     {
         return view('home');
     }
-	public function toMeo()
+	
+	public function Meo()
 	{	
 		return view('meo');
 	}
 
-	public function toBienBao()
+	public function BienBao()
 	{
 		return view('bienBao');
 	}
 
-	public function toDangThi()
+	public function DangThi()
 	{
 		return view('dangThi');
 	}
@@ -47,4 +48,8 @@ class HomeController extends Controller
 	{
 		return view('addQues');
 	}
+	public function modifiersques($id){
+		return view('modifiersQues')->with('data',$data);
+	}
+	public function addadmin(){}
 }
