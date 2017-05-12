@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
-
+use App\question;
+use App\ques_img;
 class WelcomeController extends Controller {
 
 	/*
@@ -50,5 +51,18 @@ class WelcomeController extends Controller {
 	{
 		return view('chooseExam');
 	}
-	
+	public function cauHoi(){
+		
+			$temp = question::all();			
+			$resultsDB = $temp;
+		
+		
+			$temp = ques_img::all();			
+			$resultsdbimg = $temp;
+		
+		return view('cauHoi')->with([
+			'data'=> $resultsDB,
+			'dataimg'=>$resultsdbimg
+			]);
+	}
 }

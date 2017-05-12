@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\question;
+use Illuminate\Support\Facades\Auth;
 class HomeController extends Controller
 {
     /**
@@ -55,21 +56,28 @@ class HomeController extends Controller
 		return view ('register');
 	}
 	public function saveques(){
-		if(isset($_POST['question']) &&
-		isset($_POST['answer1']) && isset($_POST['answer2'])){
-			$ques = new question();
-			$ques->question = $_POST['question'];
+		if(isset($_POST['name_img']))
+			$ques = new ques_img();
+		else $ques = new question();		
+			$ques->question = $_POST['ques'];
 			$ques->c0 = $_POST['answer1'];
 			$ques->c1 = $_POST['answer2'];
-			
+			if(isset($_POST['a1'])) $ques->a0 = $_POST['a1'];
+			if(isset($_POST['a2'])) $ques->a1 = $_POST['a2'];
 			if(isset($_POST['answer3'])){
 				$ques->c2 = $_POST['answer3'];
-				if(isset($_POST['answer4']))
-				$ques->c3 = $_POST['answer4'];
+				if(isset($_POST['a3'])) $ques->a2 = $_POST['a3'];
+				if(isset($_POST['answer4'])){
+					$ques->c3 = $_POST['answer4'];
+					if(isset($_POST['a4'])) $ques->a3 = $_POST['a4'];
+				}
 			}
-			else if(isset($_POST['answer4']))
+			else if(isset($_POST['answer4'])){
 				$ques->c2 = $_POST['answer4'];
-		}
+				if(isset($_POST['a4'])) $ques->a2 = $_POST['a4'];
+			}
+		$ques->user_id = Auth::id();	
+		$ques->save();
 		return view('addQues'); 	
 	}
 }

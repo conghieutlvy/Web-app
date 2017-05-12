@@ -4,8 +4,8 @@ session_start();
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\TestOnline;
-use App\question_img;
+use App\question;
+use App\ques_img;
 class DoExamController extends Controller {
 		
 	protected $data = array();
@@ -27,7 +27,7 @@ class DoExamController extends Controller {
 			do{
 				$check = 1;
 				$j =0;
-				$id = mt_rand(0,20);
+				$id = mt_rand(1,20);
 				for(; $j < $i; $j++){
 					if($t[$j] == $id){
 						$check = 0;
@@ -39,7 +39,7 @@ class DoExamController extends Controller {
 					$t[$i] = $id;	
 				}
 			}while(!$check);
-			$temp = TestOnline::where('id','=',$id)->get()->toArray();
+			$temp = question::find($id);
 			$resultsDB[$i] = $temp;
 			$_SESSION["dtb[$i]"] = $temp;
 		}
@@ -47,7 +47,7 @@ class DoExamController extends Controller {
 				do{
 					$check = 1;
 					$j =7;
-					$id = mt_rand(0,10);
+					$id = mt_rand(1,10);
 					for(; $j < $i; $j++){
 						if($t[$j] == $id){
 							$check = 0;
@@ -59,7 +59,7 @@ class DoExamController extends Controller {
 						$t[$i] = $id;	
 					}
 				}while(!$check);
-				$temp = question_img::where('id','=',$id)->get()->toArray();
+				$temp = ques_img::find($id);;
 				$resultsDB[$i] = $temp;
 				$_SESSION["dtb[$i]"] = $temp;	
 			}
@@ -67,23 +67,23 @@ class DoExamController extends Controller {
 		return view('doExamPage')->with('data', $resultsDB);
 	}
 	public function doexamwithid($id){
-		if($id == 0) $startId = 0;
-		else if($id == 1) $startId = 2;
-		else if($id == 2) $startId = 4;
-		else $startId = 6;
+		if($id == 0) $startId = 1;
+		else if($id == 1) $startId = 3;
+		else if($id == 2) $startId = 5;
+		else $startId = 7;
 		for($i = 0 ; $i<7; $i++) {
-			$temp = TestOnline::where('id','=',$startId + $i)->get()->toArray();
+			$temp = question::find($startId + $i);
 			$resultsDB[$i] = $temp;
 			$_SESSION["dtb[$i]"] = $temp;
 		}
 		for($i = 7; $i<10; $i++) {
-			$temp = question_img::where('id','=',$startId++)->get()->toArray();
+			$temp = ques_img::find($startId++);
 			$resultsDB[$i] = $temp;
 			$_SESSION["dtb[$i]"] = $temp;	
 		}
 		return view('doExamPage')->with([
-		'data'=>$resultsDB,
-		'key'=>$id,
+			'data'=>$resultsDB,
+			'key'=>$id,
 		]);
 	}	
 	public function showresults(){
@@ -94,33 +94,15 @@ class DoExamController extends Controller {
 		for($i = 0; $i<10; $i++) {
 			$temp = $_SESSION["dtb[$i]"];
 			$t =$i*4;
-			foreach($temp as $row){
+			foreach($temp as $ques){
 				$count = 0;
-				foreach($row as $key => $value){
-					if(($key == "a0" && $value == $this->data[$t])
-					||($key == "a1" && $value == $this->data[$t+1])
-					||($key == "a2" && $value == $this->data[$t+2])
-					||($key == "a3" && $value == $this->data[$t+3])) $count++;	
-				}
+				if(($ques["a0"] == $this->data[$t])
+					||($ques["a1"] == $this->data[$t+1])
+					||($ques["a2"] == $this->data[$t+2])
+					||($ques["a3"] == $this->data[$t+3])) $count++;
 				if( $count == 3) $this->results[$i] = 1;
 			}
 		}
-		session_destroy();
 		return view('resultsPage')->with('res', $this->results);
-	}
-	
-	public function showquestion() {
-		
-			$temp = TestOnline::all()->toArray();			
-			$resultsDB = $temp;
-		
-		
-			$temp = question_img::all()->toArray();			
-			$resultsdbimg = $temp;
-		
-		return view('cauHoi')->with([
-			'data'=> $resultsDB,
-			'dataimg'=>$resultsdbimg
-			]);
 	}
 }
