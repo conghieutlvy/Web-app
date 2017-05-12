@@ -20,12 +20,10 @@ class CreateQuestionsTable extends Migration
 			$table->text('c1');
 			$table->text('c2')->nullable();
 			$table->text('c3')->nullable();
-			$table->boolean('a0');
-			$table->boolean('a1');
+			$table->boolean('a0')->default(0));
+			$table->boolean('a1')->default(0);
 			$table->boolean('a2')->nullable();
 			$table->boolean('a3')->nullable();
-			$table->integer('user_id')->unsigned();
-			$table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
