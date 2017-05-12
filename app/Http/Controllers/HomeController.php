@@ -56,7 +56,9 @@ class HomeController extends Controller
 		return view ('register');
 	}
 	public function saveques(){
-			$ques = new question();		
+		if(isset($_POST['name_img']))
+			$ques = new ques_img();
+		else $ques = new question();		
 			$ques->question = $_POST['ques'];
 			$ques->c0 = $_POST['answer1'];
 			$ques->c1 = $_POST['answer2'];

@@ -55,6 +55,6 @@ Route::get('home/addadmin', 'HomeController@addadmin');
 
 Route::get('home/feedback', 'HomeController@feedback');
 
-Route::post('home/vaildques', 'HomeController@saveques');
+Route::post('home/addQues', 'HomeController@saveques');
 
 Route::post('home/addadmin', 'HomeController@saveadmin');
