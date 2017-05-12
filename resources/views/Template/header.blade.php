@@ -12,7 +12,6 @@
  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <!-- Latest compiled and minified JavaScript -->
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     
 	<script>
@@ -31,12 +30,13 @@
 
     <div class="container-fluid">
 			<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-				<div class="container-fluid">
-				<div class="navbar-header">
-					 
+				<div class="navbar-header"> 
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-						 <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-					</button> <a class="navbar-brand" href= "/" >Trang chủ</a>
+				<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+					</button> 
+                    <a class="navbar-brand" href="{{ url('/') }}">
+                        {{ config('app.name', 'Trang chủ') }}
+                    </a>
 				</div>
 				
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -48,30 +48,38 @@
 							Tìm kiếm
 						</button>
 					</form>
-					<ul class="nav navbar-nav navbar-right">
-						<li>
-							<a href="#">Đăng nhập</a>
-						</li>
-						<li class="dropdown">
-							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hồ sơ<strong class="caret"></strong></a>
-							<ul class="dropdown-menu">
-								<li>
-									<a href="#">Lịch sử thi</a>
-								</li>
-								<li>
-									<a href="#">Cài đặt thông tin</a>
-								</li>
-								<li class="divider">
-								</li>
-								<li>
-									<a href="#">Đăng xuất</a>
-								</li>
-							</ul>
-						</li>
-					</ul>
+                    
+                    <ul class="nav navbar-nav navbar-right">
+                        <!-- Authentication Links -->
+                        @if (Auth::guest())
+                            <li><a href="{{ route('login') }}">Đăng nhập</a></li>
+                            <!--<li><a href="{{ route('register') }}">Đăng kí</a></li>
+                    -->        <li> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</li>
+                        @else 
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Đăng xuất
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</li>
+                        @endif
+                    </ul>
 				</div>
-			</div>
-		</nav>
+			</nav>
 	<br><br><br>
 @yield('page')
     </div>
