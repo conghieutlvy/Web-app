@@ -62,6 +62,15 @@
 							</div>
                         </div>
 						
+						<div class="form-group"> 
+							<label for="exampleInputFile"> 
+								Thêm ảnh 
+							</label> 
+							<input type="file" id="exampleInputFile" /> 
+							<p class="help-block"> Chọn ảnh từ máy tính. 
+							</p> 
+						</div>
+						
 						<div class="form-group">
                             <center>
 								<button disabled="disabled" id="btadd" type="submit" class="btn btn-primary">
