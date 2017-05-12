@@ -10,9 +10,6 @@
              getanswer(0, $row, $url);        
         }
     }
-    ?>
-
-<?php 
 function getanswer($number,$row, $url){ 
         foreach($row as $key => $val){
             if($key == "question"){?>
@@ -32,14 +29,15 @@ function getanswer($number,$row, $url){
             if($key == "img_src") { ?>
             <center><img src="
         <?php echo $url.$val; ?>
-            " alt = ""/></center>
+            " alt = ""/>
+            </center>
         <?php }
             if ($key == "c0"){?>
             <div class="row">
                 <div class="col-xs-2">
                 </div>
                 <div class="col-xs-8">
-                    <input onclick="active_num(<?php echo $number."0";?>);" type="checkbox" name="cb[]" value="<?php echo $number."0";?>" /> 
+                    <input type="checkbox" name="cb[]" value="<?php echo $number."0";?>" /> 
                           <?php echo ($val) ?>
                                  
                 </div>
@@ -54,7 +52,7 @@ function getanswer($number,$row, $url){
                             <div class="col-xs-2">
                             </div>
                             <div class="col-xs-8">
-                                 <input onclick="active_num(<?php echo $number."1";?>);" type="checkbox" name="cb[]" value="<?php echo $number."1";?>" /> 
+                                 <input  type="checkbox" /> 
                                  <?php echo ($val) ?>
                                  
                             </div>
@@ -68,7 +66,7 @@ function getanswer($number,$row, $url){
                             <div class="col-xs-2">
                             </div>
                             <div class="col-xs-8">
-                                 <input onclick="active_num(<?php echo $number."2";?>);" type="checkbox" name="cb[]" value="<?php echo $number."2";?>" /> 
+                                 <input type="checkbox"  /> 
                                  <?php echo ($val) ?>
                                  
                             </div>
@@ -82,7 +80,7 @@ function getanswer($number,$row, $url){
                             <div class="col-xs-2">
                             </div>
                             <div class="col-xs-8">
-                                 <input onclick="active_num(<?php echo $number."3";?>);" type="checkbox" name="cb[]" value="<?php echo $number."3";?>" /> 
+                                 <input type="checkbox"  /> 
                                  <?php echo ($val) ?>
                                  
                             </div>
