@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\question;
+use App\ques_img;
 use Illuminate\Support\Facades\Auth;
 class HomeController extends Controller
 {
@@ -45,6 +46,21 @@ class HomeController extends Controller
 	{
 		return view('chooseExam');
 	}
+	public function cauHoi(){
+		
+			$temp = question::all();			
+			$resultsDB = $temp;
+		
+		
+			$temp = ques_img::all();			
+			$resultsdbimg = $temp;
+		
+		return view('cauHoi')->with([
+			'data'=> $resultsDB,
+			'dataimg'=>$resultsdbimg
+			]);
+	}
+
 	public function addques()
 	{
 		return view('addQues');
@@ -56,9 +72,12 @@ class HomeController extends Controller
 		return view ('register');
 	}
 	public function saveques(){
-		if(isset($_POST['name_img']))
+		if(isset($_POST['name_img'])){
 			$ques = new ques_img();
-		else $ques = new question();		
+			$ques['name_img'] =  1;
+		}
+		else $ques = new question();
+				
 			$ques->question = $_POST['ques'];
 			$ques->c0 = $_POST['answer1'];
 			$ques->c1 = $_POST['answer2'];
