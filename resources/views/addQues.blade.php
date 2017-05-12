@@ -14,7 +14,7 @@
                             <label for="ques" class="col-md-3 control-label">Câu hỏi:</label>
 
                             <div class="col-md-7">
-                                <input id="ques" type="text" class="form-control" name="ques" value="{{ old('ques') }}" required autofocus>
+                                <input id="ques" type="text" class="form-control" name="ques" required autofocus>
                             </div>
                         </div>
 
@@ -22,7 +22,7 @@
                             <label for="firt-answer" class="col-md-3 control-label">Đáp án 1:</label>
 					
                             <div class="col-md-7">
-                                <input id="firt-answer" type="firt-answer" class="form-control" name="firt-answer" value="{{ old('firt-answer') }}" required>
+                                <input id="firt-answer" type="second-answer" class="form-control" name="second-answer" required>
                             </div>
 							<div class="col-md-2">
 								<input onclick="" type="checkbox" name="" value="1" /> 
@@ -44,7 +44,7 @@
                             <label for="third-answer" class="col-md-3 control-label">Đáp án 3:</label>
 			
                             <div class="col-md-7">
-                                <input id="third-answer" type="third-answer" class="form-control" name="third-answer" required>
+                                <input id="third-answer" type="third-answer" class="form-control" name="third-answer">
                             </div>
 							<div class="col-md-2">
 								<input onclick="" type="checkbox" name="" value="1" /> 
@@ -55,7 +55,7 @@
                             <label for="fourth-answer" class="col-md-3 control-label">Đáp án 4:</label>
 			
                             <div class="col-md-7">
-                                <input id="fourth-answer" type="fourth-answer" class="form-control" name="fourth-answer" required>
+                                <input id="fourth-answer" type="fourth-answer" class="form-control" name="fourth-answer">
                             </div>
 							<div class="col-md-2">
 								<input onclick="" type="checkbox" name="" value="1" /> 
