@@ -48,9 +48,9 @@
 								Tổng hợp kết quả các câu hỏi.
 							</div>
 							@if(Auth::guest())
-								<a class="btn btn-primary" href="#">Xem</a>
+								<a class="btn btn-primary" href="cauhoi">Xem</a>
                             @else
-                            	<a class="btn btn-primary" href="#">Xem</a>
+                            	<a class="btn btn-primary" href="admin/cauhoi">Xem</a>
                             @endif
 							</p>
 						</div>
@@ -90,14 +90,15 @@
 				</div>
 				<div class="col-md-4">
 					<div class="thumbnail">
-						<img alt="Các dạng bài thi" src="5.jpg">
+						<img alt="Các dạng thi" src="5.jpg">
 						<div class="caption">
 							<h3>
-								Các dạng bài thi
+								Các dạng thi
 							</h3>
-							
-								<a class="btn btn-primary" href="#">Xem</a>
-							
+							@if(Auth::guest())
+								<a class="btn btn-primary" href="dangthi">Xem</a>	
+                            @else  <a class="btn btn-primary" href="admin/dangthi">Xem</a>	
+							@endif
 						</div>
 					</div>
 				</div>
