@@ -1,4 +1,4 @@
-@extends('Template/header')
+@extends('Template.header')
 
 @section('page')
 <div class="container">
@@ -10,61 +10,62 @@
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Tên</label>
+                        <div class="form-group{{ $errors->has('ques') ? ' has-error' : '' }}">
+                            <label for="ques" class="col-md-4 control-label">Thêm câu hỏi</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+                                <input id="ques" type="text" class="form-control" name="ques" value="{{ old('ques') }}" required autofocus>
 
-                                @if ($errors->has('name'))
+                                @if ($errors->has('ques'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
+                                        <strong>{{ $errors->first('ques') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail</label>
-
+                        <div class="form-group{{ $errors->has('firt-answer') ? ' has-error' : '' }}">
+                            <label for="firt-answer" class="col-md-4 control-label">Đáp án 1</label>
+					
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
-
-                                @if ($errors->has('email'))
+                                <input id="firt-answer" type="firt-answer" class="form-control" name="firt-answer" value="{{ old('firt-answer') }}" required>
+								<p>     </p>
+								<input onclick="" type="checkbox" name="" value="1" /> 
+                                @if ($errors->has('firt-answer'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                        <strong>{{ $errors->first('firt-answer') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
+                        <div class="form-group{{ $errors->has('second-answer') ? ' has-error' : '' }}">
+                            <label for="second-answer" class="col-md-4 control-label">Đáp án 2</label>
+	
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
+                                <input id="second-answer" type="second-answer" class="form-control" name="second-answer" required>
+								<p>     </p>
+								<input onclick="" type="checkbox" name="" value="1" /> 
+                                @if ($errors->has('second-answer'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
+                                        <strong>{{ $errors->first('second-answer') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="password-confirm" class="col-md-4 control-label">Nhập lại mật khẩu</label>
-
+                        <div class="form-group{{ $errors->has('third-answer') ? ' has-error' : '' }}">
+                            <label for="third-answer" class="col-md-4 control-label">Đáp án 2</label>
+			
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Thêm
-                                </button>
+                                <input id="third-answer" type="third-answer" class="form-control" name="third-answer" required>
+								<p>     </p>
+								<input onclick="" type="checkbox" name="" value="1" /> 
+                                @if ($errors->has('third-answer'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('third-answer') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                         </div>
                     </form>

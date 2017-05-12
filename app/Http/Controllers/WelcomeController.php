@@ -32,17 +32,17 @@ class WelcomeController extends Controller {
 	{
 		return view('homePage');
 	}
-	public function toMeo()
+	public function Meo()
 	{	
 		return view('meo');
 	}
 
-	public function toBienBao()
+	public function BienBao()
 	{
 		return view('bienBao');
 	}
 
-	public function toDangThi()
+	public function DangThi()
 	{
 		return view('dangThi');
 	}
