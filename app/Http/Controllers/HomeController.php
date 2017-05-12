@@ -72,9 +72,23 @@ class HomeController extends Controller
 		return view ('register');
 	}
 	public function saveques(){
-		if(isset($_POST['name_img'])){
-			$ques = new ques_img();
-			$ques['name_img'] =  "1";
+			
+		if($_FILES['up_img']['name'] != null){
+			$temp = $_FILES['up_img'];
+			$ftype = $temp['type'];
+			$fsize = $temp['size'];
+			$maxsize = 2*8*1024*1024;
+			if($ftype == "image/jpeg" 
+				|| $ftype == "image/png" 
+				|| $ftype == "image/gif"){
+				if($fsize <= $maxsize){
+					$path = 'picture/';
+					$tmp_name = $temp['tmp_name'];
+					$ques = new ques_img();
+					$ques['name_img'] =  $temp['name'];
+				} else echo "Tải lên không thành công, dung lượng quá lớn.";
+			} else echo "Tải lên không thành công, vui lòng chỉ chọn các định dạng: jpeg, png, gif.";
+			move_uploaded_file($tmp_name,$path.$temp['name']);
 		}
 		else $ques = new question();
 				

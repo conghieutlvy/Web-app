@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Thêm câu hỏi</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="">
+                    <form class="form-horizontal" role="form" method="POST" action="" enctype="multipart/form-data">
                         {{ csrf_field() }}
 
                         <div class="form-group">
@@ -63,11 +63,11 @@
                         </div>
 						
 						<div class="form-group"> 
-							<label for="exampleInputFile" class="col-md-3 control-label" >  
+							<label for="InputFile" class="col-md-3 control-label" >  
 								Thêm ảnh: 
 							</label>
                             <div class="col-md-7">
-                                <input type="file" id="ifile" name = "name_img" /> 
+                                <input type="file" id="ifile" name="up_img" /> 
                                 <p class="help-block"> Chọn ảnh từ máy tính. 
                                 </p>
                             </div> 
@@ -107,32 +107,6 @@
 			document.getElementById("btadd").setAttribute("disabled","disabled");
 		}
 	}
-
- document.getElementById("ifile").click( function() {
-   //kiem tra trinh duyet co ho tro File API
-    if (window.File && window.FileReader && window.FileList && window.Blob)
-    {
-      // lay dung luong va kieu file tu the input file
-        var fsize = $('#i_file')[0].files[0].size;
-        var ftype = $('#i_file')[0].files[0].type;
-        var fname = $('#i_file')[0].files[0].name;
- 
-       switch(ftype)
-        {
-            case 'image/png':
-            case 'image/gif':
-            case 'image/jpeg':
-            case 'image/pjpeg':
-                alert("Acceptable image file!");
-                break;
-            default:
-                alert('Unsupported File!');
-        }
- 
-    }else{
-        alert("Please upgrade your browser, because your current browser lacks some new features we need!");
-    }
-});
 
 </script>
 @endsection
