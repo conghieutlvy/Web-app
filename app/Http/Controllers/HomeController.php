@@ -74,7 +74,7 @@ class HomeController extends Controller
 	public function saveques(){
 		if(isset($_POST['name_img'])){
 			$ques = new ques_img();
-			$ques['name_img'] =  1;
+			$ques['name_img'] =  "1";
 		}
 		else $ques = new question();
 				

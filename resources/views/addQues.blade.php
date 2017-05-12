@@ -67,7 +67,7 @@
 								Thêm ảnh: 
 							</label>
                             <div class="col-md-7">
-                                <input type="file" id="file" name = "name_img" /> 
+                                <input type="file" id="ifile" name = "name_img" /> 
                                 <p class="help-block"> Chọn ảnh từ máy tính. 
                                 </p>
                             </div> 
@@ -107,5 +107,32 @@
 			document.getElementById("btadd").setAttribute("disabled","disabled");
 		}
 	}
+
+ document.getElementById("ifile").click( function() {
+   //kiem tra trinh duyet co ho tro File API
+    if (window.File && window.FileReader && window.FileList && window.Blob)
+    {
+      // lay dung luong va kieu file tu the input file
+        var fsize = $('#i_file')[0].files[0].size;
+        var ftype = $('#i_file')[0].files[0].type;
+        var fname = $('#i_file')[0].files[0].name;
+ 
+       switch(ftype)
+        {
+            case 'image/png':
+            case 'image/gif':
+            case 'image/jpeg':
+            case 'image/pjpeg':
+                alert("Acceptable image file!");
+                break;
+            default:
+                alert('Unsupported File!');
+        }
+ 
+    }else{
+        alert("Please upgrade your browser, because your current browser lacks some new features we need!");
+    }
+});
+
 </script>
 @endsection
