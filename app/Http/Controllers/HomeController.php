@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\question;
-use App\Http\Controllers\Auth;
+use Illuminate\Support\Facades\Auth;
 class HomeController extends Controller
 {
     /**
@@ -74,6 +74,7 @@ class HomeController extends Controller
 				$ques->c2 = $_POST['answer4'];
 				if(isset($_POST['a4'])) $ques->a2 = $_POST['a4'];
 			}
+		$ques->user_id = Auth::id();	
 		$ques->save();
 		return view('addQues'); 	
 	}

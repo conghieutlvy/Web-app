@@ -14,19 +14,19 @@
 Route::get('/', function () {
     return view('homePage');
 });
-Route::get('/doExam', 'DoExamController@doexam');
+Route::get('doExam', 'DoExamController@doexam');
 
-Route::get('/meo', "WelcomeController@Meo");
+Route::get('meo', "WelcomeController@Meo");
 
-Route::get('/bienbao', "WelcomeController@BienBao");
+Route::get('bienbao', "WelcomeController@BienBao");
 
-Route::get('/dangthi', "WelcomeController@dangThi");
+Route::get('dangthi', "WelcomeController@dangThi");
 
-Route::get('/chooseexam', "WelcomeController@chooseExam");
+Route::get('chooseexam', "WelcomeController@chooseExam");
 
-Route::get('/cauhoi', "WelcomeController@cauHoi");
+Route::get('cauhoi', "WelcomeController@cauHoi");
 
-Route::post('/doExam', 'DoExamController@showresults');
+Route::post('doExam', 'DoExamController@showresults');
 
 
 Route::get('admin/doExam', 'DoExamController@doexam');
@@ -45,16 +45,16 @@ Route::post('admin/doExam', 'DoExamController@showresults');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('home', 'HomeController@index')->name('home');
 
-Route::get('/home/addQues', 'HomeController@addques');
+Route::get('home/addQues', 'HomeController@addques');
 
-Route::get('/home/modifiersques/{id}', 'HomeController@modifiersques');
+Route::get('home/modifiersques/{id}', 'HomeController@modifiersques');
 
-Route::get('/home/addadmin', 'HomeController@addadmin');
+Route::get('home/addadmin', 'HomeController@addadmin');
 
-Route::get('/home/feedback', 'HomeController@feedback');
+Route::get('home/feedback', 'HomeController@feedback');
 
-Route::post('/home/addQues', 'HomeController@saveques');
+Route::post('home/vaildques', 'HomeController@saveques');
 
-Route::post('/home/addadmin', 'HomeController@saveadmin');
+Route::post('home/addadmin', 'HomeController@saveadmin');
