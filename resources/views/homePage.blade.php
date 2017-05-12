@@ -48,9 +48,9 @@
 								Tổng hợp kết quả các câu hỏi.
 							</div>
 							@if(Auth::guest())
-								<a class="btn btn-primary" href="cauHoi">Xem</a>
+								<a class="btn btn-primary" href="cauhoi">Xem</a>
                             @else
-                            	<a class="btn btn-primary" href="admin/cauHoi">Xem</a>
+                            	<a class="btn btn-primary" href="admin/cauhoi">Xem</a>
                             @endif
 							</p>
 						</div>
@@ -96,8 +96,8 @@
 								Các dạng thi
 							</h3>
 							@if(Auth::guest())
-								<a class="btn btn-primary" href="dangThi">Xem</a>	
-                            @else  <a class="btn btn-primary" href="admin/dangThi">Xem</a>	
+								<a class="btn btn-primary" href="dangthi">Xem</a>	
+                            @else  <a class="btn btn-primary" href="admin/dangthi">Xem</a>	
 							@endif
 						</div>
 					</div>
