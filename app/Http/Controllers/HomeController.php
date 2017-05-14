@@ -65,8 +65,40 @@ class HomeController extends Controller
 	{
 		return view('addQues');
 	}
-	public function modifiersques($id){
-		return view('modifiersQues')->with('data',$data);
+	public function selectques($key){
+		$resultsDB = question::all();
+		$resultsdbimg = ques_img::all();
+		return view('selectQues')->with([
+		'key'=>$key,
+		'data'=> $resultsDB,
+		'dataimg'=>$resultsdbimg
+		]);
+	}
+	public function modifiersques(){
+		if(isset($_POST['cb'])){
+		$temp = $_POST['cb'];
+			if($key == 0){
+				foreach($temp as $row){
+					$num = intval(substr($row,0,1));
+					$id = intval(substr($row,2,2));
+					if($num == 0) $ques = question::find($id);
+					else $ques = ques_img::find($id);
+					$ques->delete();
+				}
+			}
+			if($key == 1){
+				$i = 0;
+				foreach($temp as $row){
+					$num = intval(substr($row,0,1));
+					$id = intval(substr($row,2,2));
+					if($num == 0) $ques = question::find($id);
+					else $ques = ques_img::find($id);
+					$data[$i] = $ques;
+					$i++;
+				}
+				return view('modifiersQues')->with('data',$data);
+			}	
+		}
 	}
 	public function addadmin(){
 		return view ('register');
@@ -85,10 +117,11 @@ class HomeController extends Controller
 					$path = 'picture/';
 					$tmp_name = $temp['tmp_name'];
 					$ques = new ques_img();
-					$ques['name_img'] =  $temp['name'];
+					$temp['name'] =  time()."-".$temp['name'];
+					$ques['name_img'] = $temp['name'];
+					move_uploaded_file($tmp_name,$path.$temp['name']);
 				} else echo "Tải lên không thành công, dung lượng quá lớn.";
-			} else echo "Tải lên không thành công, vui lòng chỉ chọn các định dạng: jpeg, png, gif.";
-			move_uploaded_file($tmp_name,$path.$temp['name']);
+			} else echo "Tải lên không thành công, vui lòng chỉ chọn các định dạng: jpeg, png, gif.";	
 		}
 		else $ques = new question();
 				

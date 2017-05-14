@@ -22,7 +22,7 @@
                             <label for="firt-answer" class="col-md-3 control-label">Đáp án 1:</label>
 					
                             <div class="col-md-7">
-                                <input id="answer1" type="second-answer" class="form-control" name="answer1" required>
+                                <input  id="answer1" type="second-answer" class="form-control" name="answer1" required>
                             </div>
 							<div class="col-md-2">
 								<input id = "cb1" onclick="switchadd();" type="checkbox" name="a1" value="1" /> 
@@ -33,7 +33,7 @@
                             <label for="second-answer" class="col-md-3 control-label">Đáp án 2:</label>
 	
                             <div class="col-md-7">
-                                <input id="answer2" type="second-answer" class="form-control" name="answer2" required>
+                                <input  id="answer2" type="second-answer" class="form-control" name="answer2" required>
                             </div>
 							<div class="col-md-2">
 								<input id = "cb2" onclick="switchadd();" type="checkbox" name="a2" value="1" /> 
@@ -97,10 +97,10 @@
 		var cb2 = document.getElementById('cb2');
 		var cb3 = document.getElementById('cb3');
 		var cb4 = document.getElementById('cb4');
-		if((cb1.checked && answer1 != null)
-		 ||(cb2.checked && answer2 != null)
-		 ||(cb3.checked && answer3 != null)
-		 ||(cb4.checked && answer4 != null)){
+		if((cb1.checked && answer1.value != "")
+		 ||(cb2.checked && answer2.value != "")
+		 ||(cb3.checked && answer3.value != "")
+		 ||(cb4.checked && answer4.value != "")){
 			document.getElementById("btadd").removeAttribute("disabled");
 		}
 		else{

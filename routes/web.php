@@ -49,7 +49,9 @@ Route::get('home', 'HomeController@index')->name('home');
 
 Route::get('home/addQues', 'HomeController@addques');
 
-Route::get('home/modifiersques/{id}', 'HomeController@modifiersques');
+Route::get('home/selectques/{key}', 'HomeController@selectques');
+
+Route::post('home/modifiersques/{key}', 'HomeController@modifiersques');
 
 Route::get('home/addadmin', 'HomeController@addadmin');
 
