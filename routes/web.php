@@ -51,7 +51,7 @@ Route::get('home/addQues', 'HomeController@addques');
 
 Route::get('home/selectques/{key}', 'HomeController@selectques');
 
-Route::post('home/modifiersques/{key}', 'HomeController@modifiersques');
+Route::post('home/selectques/modifiersques/{key}', 'HomeController@modifiersques');
 
 Route::get('home/addadmin', 'HomeController@addadmin');
 

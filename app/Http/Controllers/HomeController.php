@@ -74,7 +74,7 @@ class HomeController extends Controller
 		'dataimg'=>$resultsdbimg
 		]);
 	}
-	public function modifiersques(){
+	public function modifiersques($key){
 		if(isset($_POST['cb'])){
 		$temp = $_POST['cb'];
 			if($key == 0){
@@ -85,11 +85,14 @@ class HomeController extends Controller
 					else $ques = ques_img::find($id);
 					$ques->delete();
 				}
+				echo "Xóa thành công";
+				return;
 			}
 			if($key == 1){
 				$i = 0;
 				foreach($temp as $row){
 					$num = intval(substr($row,0,1));
+					
 					$id = intval(substr($row,2,2));
 					if($num == 0) $ques = question::find($id);
 					else $ques = ques_img::find($id);
@@ -97,8 +100,10 @@ class HomeController extends Controller
 					$i++;
 				}
 				return view('modifiersQues')->with('data',$data);
-			}	
+			}
+			echo "Vui lòng chọn ít nhất 1 câu hỏi";	
 		}
+		
 	}
 	public function addadmin(){
 		return view ('register');

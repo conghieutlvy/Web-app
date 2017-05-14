@@ -6,7 +6,8 @@
 <center><h2> Chọn câu hỏi cần <?php if($key == 0) echo "xóa";
  else echo "sửa" ?></h2></center>
 <br /><br />
-<form name= "checkform" action="modifieresques/<?php echo $key ?>" method="POST" >
+<form name= "checkform" action="modifiersques/<?php echo $key ?>" method="POST" >
+{{ csrf_field() }}
 <div class="row">
     <center>
     <table cellspacing="20px" cellpadding="20px" border="1" >
@@ -34,7 +35,7 @@
 <div class = "row">
 <center>
     <input width="300" id = "sumbit" type="submit" class="btn btn-lg btn-success btn-fixed-right" name="submit-form" value="<?php if($key == 0) echo "Xóa" ;
-	else echo "sửa" ?>" /></center>
+	else echo "Sửa" ?>" /></center>
 </div>
 </form> 
 
