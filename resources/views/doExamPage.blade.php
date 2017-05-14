@@ -1,7 +1,19 @@
 @extends('Template/exam')
 
 @section('exam')
+@if (!Auth::guest())
 	<?php 
+		if(isset($key)){ 
+			echo "Bộ đề thi số ".($key + 1);
+			$url = "../../picture/";
+		}
+		else {
+			echo "Bộ đề thi ngẫu nhiên";
+			$url = "../picture/";
+		}
+	?>
+@else
+<?php 
 		if(isset($key)){ 
 			echo "Bộ đề thi số ".($key + 1);
 			$url = "../picture/";
@@ -10,8 +22,8 @@
 			echo "Bộ đề thi ngẫu nhiên";
 			$url = "picture/";
 		}
-	
 	?>
+@endif
 @stop
 @section('ques')
 <?php 

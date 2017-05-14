@@ -34,6 +34,7 @@
                             <label for="ques" class="col-md-3 control-label">Câu hỏi:</label>
 
                             <div class="col-md-7">
+                                <input id="ques" type="text" class="form-control" name="ques" required autofocus value="<?php echo $ques['question'] ?>">
                             </div>
                         </div>
 
@@ -41,6 +42,7 @@
                             <label for="firt-answer" class="col-md-3 control-label">Đáp án 1:</label>
 					
                             <div class="col-md-7">
+                                <input  id="answer1" type="text" class="form-control" name="answer1" required value="<?php echo $ques['c0'] ?>">
                             </div>
 							<div class="col-md-2">
 								<input id = "cb1" onclick="switchadd();" type="checkbox" name="a1" value="1" <?php if($ques['a0']) echo "checked"; ?>/> 

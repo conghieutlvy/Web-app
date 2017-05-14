@@ -16,6 +16,8 @@ Route::get('/', function () {
 });
 Route::get('doExam', 'DoExamController@doexam');
 
+Route::get('doExam/{id}', 'DoExamController@doexamwithid');
+
 Route::get('meo', "WelcomeController@Meo");
 
 Route::get('bienbao', "WelcomeController@BienBao");
@@ -28,8 +30,12 @@ Route::get('cauhoi', "WelcomeController@cauHoi");
 
 Route::post('doExam', 'DoExamController@showresults');
 
+Route::post('doExam/{id}', 'DoExamController@showresults');
+
 
 Route::get('admin/doExam', 'DoExamController@doexam');
+
+Route::get('admin/doExam/{id}', 'DoExamController@doexamwithid');
 
 Route::get('admin/meo', "HomeController@Meo");
 
@@ -42,6 +48,8 @@ Route::get('admin/chooseexam', "HomeController@chooseExam");
 Route::get('admin/cauhoi', "HomeController@cauHoi");
 		
 Route::post('admin/doExam', 'DoExamController@showresults');
+
+Route::post('admin/doExam/{id}', 'DoExamController@showresults');
 
 Auth::routes();
 
