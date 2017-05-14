@@ -24,7 +24,7 @@
 				</div>
 				<div class="col-md-6">
 					<div class="thumbnail">
-						<a class="btn btn-primary" href="#">Ý kiến phản hồi
+						<a class="btn btn-primary" href="home/feedback">Ý kiến phản hồi
 							<img alt="Ý kiến phản hồi" src="11.jpg">
 						</a>
 					</div>
