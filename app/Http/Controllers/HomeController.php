@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\question;
 use App\ques_img;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 class HomeController extends Controller
 {
@@ -108,7 +109,7 @@ class HomeController extends Controller
 		
 	}
 	public function addadmin(){
-		return view ('register');
+		return view ('auth/register');
 	}
 	public function saveques(){
 			
@@ -152,5 +153,19 @@ class HomeController extends Controller
 		$ques->user_id = Auth::id();	
 		$ques->save();
 		return view('addQues'); 	
+	}
+	public function selectadmin(){
+		$results = User::all();
+		return view('selectadmin')->with('data',$results);
+	}
+	public function removeadmin(){
+		if(isset($_POST['cb'])){
+			$temp = $_POST['cb'];
+			foreach($temp as $id)
+				$admin = User::find($id);
+				$admin->delete();
+		}
+		$results = User::all();
+		return view('selectadmin')->with('data',$results); 
 	}
 }
