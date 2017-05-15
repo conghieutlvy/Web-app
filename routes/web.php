@@ -57,7 +57,9 @@ Route::get('home', 'HomeController@index')->name('home');
 
 Route::get('home/addQues', 'HomeController@addques');
 
-Route::get('home/selectques/{key}', 'HomeController@selectques');
+Route::get('home/selectques', 'HomeController@selectques');
+
+Route::get('home/modifiersques/{key}/{id}', 'HomeController@modifiersques');
 
 Route::get('home/addadmin', 'HomeController@addadmin');
 
@@ -66,7 +68,5 @@ Route::get('home/selectadmin','HomeController@selectadmin');
 Route::get('home/feedback', 'HomeController@feedback');
 
 Route::post('home/addQues', 'HomeController@saveques');
-
-Route::post('home/selectques/{key}', 'HomeController@modifiersques');
 
 Route::post('home/selectadmin', 'HomeController@removeadmin');

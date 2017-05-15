@@ -3,18 +3,15 @@
 @section('page')
 
 <br /><br />
-<center><h2> Chọn câu hỏi cần <?php if($key == 0) echo "xóa";
- else echo "sửa" ?></h2></center>
+<center><h2> Danh sách các câu hỏi </h2></center>
 <br /><br />
-<form name= "checkform" action="" method="POST" >
-{{ csrf_field() }}
 <div class="row">
     <center>
-    <table cellspacing="20px" cellpadding="20px" border="1" >
+    <table cellspacing="20" cellpadding="20" border="5" >
         <tr>
-            <th width="60"><center>Chọn</center></th>
             <th width="40"><center>ID</center></th>
             <th width="800"><center>Câu hỏi</center></th>
+            <th width="120"><center>Hành động</center></th>
         </tr>
     <?php
         $url = '../picture/';	 
@@ -32,22 +29,11 @@
     </center>
 </div>
 <br>
-<div class = "row">
-<center>
-    <input width="300" id = "sumbit" type="submit" class="btn btn-lg btn-success btn-fixed-right" name="submit-form" value="<?php if($key == 0) echo "Xóa" ;
-	else echo "Sửa" ?>" /></center>
-</div>
-</form> 
 
 	
 <?php
 	function getques($number,$ques,$url){
 		?><tr>
-		<th><center>
-			<input type="checkbox" name = "cb[]" id = "<?php echo $number ?>" value="<?php if(isset($ques["name_img"])) $str1 = "0" ; else $str1 = "1";
-			if($ques['id'] < 10) $str2 = "0".$ques['id']; else $str2 = $ques['id'];
-			echo $str1."_".$str2 ?>"  align="right"/></center>
-		</th>
         <th><center> <?php
 			echo $ques['id'];
 		?></center></th>
@@ -60,8 +46,31 @@
             </center>
         <?php }?>
         </th>
+        <th><center>
+        <a href="modifiersques/1/<?php if(isset($ques["name_img"])){
+			echo "1_".$ques['id'];
+			} 
+			else echo "0_".$ques['id'];
+			 ?>" class="btn  btn-warning" type="button">Sửa</a>
+              <?php if(isset($ques["name_img"])){
+				$str ="1_".$ques['id'];
+				}
+				else $str = "0_".$ques['id'];?>
+
+
+            <a id = "<?php echo "btdelete_".$str?>" onclick="confim('<?php echo "modifiersques/0/".$str?>','<?php echo "btdelete_".$str?>');" type="button" class="btn btn-danger">
+				Xóa
+			</a></center> 
+        </th>
         </tr><?php
 	}
 ?>
-
+<script language="javascript">
+	function confim(st,id){
+		var check = confirm("Bạn có thực sự muốn xóa?");
+		if(check)
+			document.getElementById(id).setAttribute("href",st);
+		else document.getElementById(id).removeAttribute("href");
+	}
+</script>
 @stop

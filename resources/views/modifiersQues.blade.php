@@ -9,28 +9,7 @@
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="" enctype="multipart/form-data">
                         {{ csrf_field() }}
-                        <?php foreach($data as $row)
-							showques($row);
-							?>
-						<div class="form-group">
-                            <center>
-								<button id="btadd" type="submit" class="btn btn-primary">
-                                    Sửa
-								</button>
-							</center>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-
-
-<?php 
-	function showques($ques){
-		?><div class="form-group">
+                        <div class="form-group">
                             <label for="ques" class="col-md-3 control-label">Câu hỏi:</label>
 
                             <div class="col-md-7">
@@ -92,10 +71,21 @@
                                 </p>
                             </div> 
 						</div>
-                        <hr>
-<?php	
-	}
-?>
+						<div class="form-group">
+                            <center>
+								<button id="btadd" type="submit" class="btn btn-primary">
+                                    Sửa
+								</button>
+							</center>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
 <script language="javascript">
 	function switchadd() {
 		var answer1 = document.getElementById('answer1');

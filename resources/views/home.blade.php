@@ -10,15 +10,8 @@
 				</div>
 				<div class="col-md-6">
 					<div class="thumbnail">
-						<a class="btn btn-primary" href="home/selectques/1">Sửa câu hỏi
+						<a class="btn btn-primary" href="home/selectques">Sửa câu hỏi
 							<img alt="Sửa câu hỏi" src="{{url('9.jpg')}}">
-						</a>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="thumbnail">
-						<a class="btn btn-primary" href="home/selectques/0">Xóa câu hỏi
-							<img alt="Xóa câu hỏi" src="{{url('10.jpg')}}">
 						</a>
 					</div>
 				</div>

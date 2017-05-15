@@ -68,45 +68,28 @@ class HomeController extends Controller
 	{
 		return view('addQues');
 	}
-	public function selectques($key){
+	public function selectques(){
 		$resultsDB = question::all();
 		$resultsdbimg = ques_img::all();
 		return view('selectQues')->with([
-		'key'=>$key,
 		'data'=> $resultsDB,
 		'dataimg'=>$resultsdbimg
 		]);
 	}
-	public function modifiersques($key){
-		if(isset($_POST['cb'])){
-		$temp = $_POST['cb'];
+	public function modifiersques($key,$id){
+		$number = intval(substr($id,0,1));
+		$idnumber = intval(substr($id,2,2));
 			if($key == 0){
-				foreach($temp as $row){
-					$num = intval(substr($row,0,1));
-					$id = intval(substr($row,2,2));
-					if($num == 0) $ques = question::find($id);
-					else $ques = ques_img::find($id);
-					$ques->delete();
-				}
-				echo "Xóa thành công";
-				return;
+					if($number == 0) $ques = question::find($idnumber);
+					else $ques = ques_img::find($idnumber);
+				$ques->delete();
+				return view('direct');
 			}
 			if($key == 1){
-				$i = 0;
-				foreach($temp as $row){
-					$num = intval(substr($row,0,1));
-					
-					$id = intval(substr($row,2,2));
-					if($num == 0) $ques = question::find($id);
-					else $ques = ques_img::find($id);
-					$data[$i] = $ques;
-					$i++;
-				}
-				return view('modifiersQues')->with('data',$data);
+				if($number == 0) $ques = question::find($idnumber);
+					else $ques = ques_img::find($idnumber);
+				return view('modifiersQues')->with('ques',$ques);;
 			}
-			echo "Vui lòng chọn ít nhất 1 câu hỏi";	
-		}
-		
 	}
 	public function addadmin(){
 		return view ('auth/register');
