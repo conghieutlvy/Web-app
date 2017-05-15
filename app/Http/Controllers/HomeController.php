@@ -94,6 +94,20 @@ class HomeController extends Controller
 	public function addadmin(){
 		return view ('auth/register');
 	}
+	public function modifiersadmin($id){
+			$admin = User::find($id);
+			if($admin != null){
+				$ques = question::where('user_id',$id)->get();
+				foreach($ques as $q)
+					$q->delete();
+				$ques = ques_img::where('user_id',$id)->get();
+				foreach($ques as $q)
+					$q->delete();	
+				$admin->delete();
+			}
+	}
+	
+	
 	public function saveques(){
 			
 		if($_FILES['up_img']['name'] != null){

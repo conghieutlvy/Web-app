@@ -65,8 +65,8 @@ Route::get('home/addadmin', 'HomeController@addadmin');
 
 Route::get('home/selectadmin','HomeController@selectadmin');
 
+Route::get('home/modifiersadmin','HomeController@modifiersadmin');
+
 Route::get('home/feedback', 'HomeController@feedback');
 
 Route::post('home/addQues', 'HomeController@saveques');
-
-Route::post('home/selectadmin', 'HomeController@removeadmin');
