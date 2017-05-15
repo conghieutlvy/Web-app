@@ -65,7 +65,7 @@ Route::get('home/addadmin', 'HomeController@addadmin');
 
 Route::get('home/selectadmin','HomeController@selectadmin');
 
-Route::get('home/modifiersadmin','HomeController@modifiersadmin');
+Route::get('home/modifiersadmin/{id}','HomeController@modifiersadmin');
 
 Route::get('home/feedback', 'HomeController@feedback');
 

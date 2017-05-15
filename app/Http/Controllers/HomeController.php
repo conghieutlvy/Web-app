@@ -92,9 +92,12 @@ class HomeController extends Controller
 			}
 	}
 	public function addadmin(){
-		return view ('auth/register');
+		if(Auth::user()->level != 0){
+			return view ('auth/register');
+		}
 	}
 	public function modifiersadmin($id){
+		if((Auth::user()->level != 0) && (Auth::user()->id != $id)){
 			$admin = User::find($id);
 			if($admin != null){
 				$ques = question::where('user_id',$id)->get();
@@ -105,6 +108,9 @@ class HomeController extends Controller
 					$q->delete();	
 				$admin->delete();
 			}
+			return view('direct');
+		}
+		else echo "Không thể xóa";
 	}
 	
 	
@@ -154,15 +160,5 @@ class HomeController extends Controller
 	public function selectadmin(){
 		$results = User::all();
 		return view('selectadmin')->with('data',$results);
-	}
-	public function removeadmin(){
-		if(isset($_POST['cb'])){
-			$temp = $_POST['cb'];
-			foreach($temp as $id)
-				$admin = User::find($id);
-				$admin->delete();
-		}
-		$results = User::all();
-		return view('selectadmin')->with('data',$results); 
 	}
 }
