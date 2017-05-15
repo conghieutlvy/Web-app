@@ -30,9 +30,9 @@
 								Ôn thi với các bộ câu hỏi tương ứng với trình độ khác nhau.
 							</div>
 							@if(Auth::guest())
-								<a class="btn btn-primary" href="doExam">Bắt đầu</a> 
+								<a class="btn btn-primary" href="chooseexam">Bắt đầu</a> 
                             @else 
-                            	<a class="btn btn-primary" href="admin/doExam">Bắt đầu</a> 
+                            	<a class="btn btn-primary" href="admin/chooseexam">Bắt đầu</a> 
 							@endif
 						</div>
 					</div>

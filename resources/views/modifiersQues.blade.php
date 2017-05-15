@@ -5,16 +5,15 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Thêm câu hỏi</div>
+                <div class="panel-heading">Sửa câu hỏi</div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="" enctype="multipart/form-data">
                         {{ csrf_field() }}
-
                         <div class="form-group">
                             <label for="ques" class="col-md-3 control-label">Câu hỏi:</label>
 
                             <div class="col-md-7">
-                                <input id="ques" type="text" class="form-control" name="ques" required autofocus>
+                                <input id="ques" type="text" class="form-control" name="ques" required autofocus value="<?php echo $ques['question'] ?>">
                             </div>
                         </div>
 
@@ -22,10 +21,10 @@
                             <label for="firt-answer" class="col-md-3 control-label">Đáp án 1:</label>
 					
                             <div class="col-md-7">
-                                <input  id="answer1" type="second-answer" class="form-control" name="answer1" required>
+                                <input  id="answer1" type="text" class="form-control" name="answer1" required value="<?php echo $ques['c0'] ?>">
                             </div>
 							<div class="col-md-2">
-								<input id = "cb1" onclick="switchadd();" type="checkbox" name="a1" value="1" /> 
+								<input id = "cb1" onclick="switchadd();" type="checkbox" name="a1" value="1" <?php if($ques['a0']) echo "checked"; ?>/> 
 							</div>
                         </div>
 
@@ -33,10 +32,10 @@
                             <label for="second-answer" class="col-md-3 control-label">Đáp án 2:</label>
 	
                             <div class="col-md-7">
-                                <input  id="answer2" type="second-answer" class="form-control" name="answer2" required>
+                                <input  id="answer2" type="text" class="form-control" name="answer2" required value="<?php echo $ques['c1'] ?>">
                             </div>
 							<div class="col-md-2">
-								<input id = "cb2" onclick="switchadd();" type="checkbox" name="a2" value="1" /> 
+								<input id = "cb2" onclick="switchadd();" type="checkbox" name="a2" value="1" <?php if($ques['a1']) echo "checked"; ?> /> 
 							</div>
                         </div>
 
@@ -44,10 +43,10 @@
                             <label for="third-answer" class="col-md-3 control-label">Đáp án 3:</label>
 			
                             <div class="col-md-7">
-                                <input id="answer3" type="third-answer" class="form-control" name="answer3">
+                                <input id="answer3" type="text" class="form-control" name="answer3" value="<?php echo $ques['c2'] ?>">
                             </div>
 							<div class="col-md-2">
-								<input id = "cb3" onclick="switchadd();" type="checkbox" name="a3" value="1" /> 
+								<input id = "cb3" onclick="switchadd();" type="checkbox" name="a3" value="1"<?php if($ques['a2']) echo "checked"; ?>/> 
 							</div>
                         </div>
 						
@@ -55,10 +54,10 @@
                             <label for="fourth-answer" class="col-md-3 control-label">Đáp án 4:</label>
 			
                             <div class="col-md-7">
-                                <input id="answer4" type="fourth-answer" class="form-control" name="answer4">
+                                <input id="answer4" type="text" class="form-control" name="answer4" value="<?php echo $ques['c3'] ?>">
                             </div>
 							<div class="col-md-2">
-								<input id = "cb4" onclick="switchadd();" type="checkbox" name="a4" value="1" /> 
+								<input id = "cb4" onclick="switchadd();" type="checkbox" name="a4" value="1" <?php if($ques['a3']) echo "checked"; ?> /> 
 							</div>
                         </div>
 						
@@ -72,11 +71,10 @@
                                 </p>
                             </div> 
 						</div>
-						
 						<div class="form-group">
                             <center>
-								<button disabled="disabled" id="btadd" type="submit" class="btn btn-primary">
-                                    Thêm
+								<button id="btadd" type="submit" class="btn btn-primary">
+                                    Sửa
 								</button>
 							</center>
                         </div>
@@ -85,6 +83,7 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 
 <script language="javascript">

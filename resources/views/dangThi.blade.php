@@ -71,7 +71,7 @@
 		</li>
 		<li>
 			Gồm 4 bài thi liên hoàn (thực hiện liên tục, không dừng xe ngắt quãng):
-			<0l style="font-weight: bold;">
+			<ul style="font-weight">
 				<li>
 					Đi vòng số 8.
 				</li>
@@ -84,13 +84,13 @@
 				<li>
 					Đi đường gồ ghề.
 				</li>
-			</0l>
+			</ul>
 		</li>
 		<li>
 			Thí sinh thực hiện liên tiếp 4 bài thi, giống hình minh họa hướng dẫn dưới đây:
 			<br><br><br>
 			<p>
-			<img alt = "Dạng bài thi thực hành xe máy" src = "7.jpg" >
+			<img alt = "Dạng bài thi thực hành xe máy" src = "{{url('7.jpg')}}" >
 			</p>
 			<br><br><br>
 		</li>
@@ -98,7 +98,7 @@
 			Trong quá trình thực hiện bài thi, thí sinh mắc lỗi sẽ bị trừ điểm theo thang điểm (như hình dưới). Thí sinh có điểm thi thực hành 80 điểm trở lên là đỗ.
 			<br><br><br>
 			<p style = "text-align: center">
-				<img alt = "Bảng các lỗi khi thi thực hành xe máy" src = "6.jpg" >
+				<img alt = "Bảng các lỗi khi thi thực hành xe máy" src = "{{url('6.jpg')}}" >
 			</p>
 		</li>
 	</ul>

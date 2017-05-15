@@ -16,6 +16,8 @@ Route::get('/', function () {
 });
 Route::get('doExam', 'DoExamController@doexam');
 
+Route::get('doExam/{id}', 'DoExamController@doexamwithid');
+
 Route::get('meo', "WelcomeController@Meo");
 
 Route::get('bienbao', "WelcomeController@BienBao");
@@ -28,8 +30,12 @@ Route::get('cauhoi', "WelcomeController@cauHoi");
 
 Route::post('doExam', 'DoExamController@showresults');
 
+Route::post('doExam/{id}', 'DoExamController@showresults');
+
 
 Route::get('admin/doExam', 'DoExamController@doexam');
+
+Route::get('admin/doExam/{id}', 'DoExamController@doexamwithid');
 
 Route::get('admin/meo', "HomeController@Meo");
 
@@ -43,18 +49,26 @@ Route::get('admin/cauhoi', "HomeController@cauHoi");
 		
 Route::post('admin/doExam', 'DoExamController@showresults');
 
+Route::post('admin/doExam/{id}', 'DoExamController@showresults');
+
 Auth::routes();
 
 Route::get('home', 'HomeController@index')->name('home');
 
 Route::get('home/addQues', 'HomeController@addques');
 
-Route::get('home/modifiersques/{id}', 'HomeController@modifiersques');
+Route::get('home/selectques', 'HomeController@selectques');
+
+Route::get('home/modifiersques/{key}/{id}', 'HomeController@modifiersques');
 
 Route::get('home/addadmin', 'HomeController@addadmin');
+
+Route::get('home/selectadmin','HomeController@selectadmin');
+
+Route::get('home/modifiersadmin/{id}','HomeController@modifiersadmin');
 
 Route::get('home/feedback', 'HomeController@feedback');
 
 Route::post('home/addQues', 'HomeController@saveques');
 
-Route::post('home/addadmin', 'HomeController@saveadmin');
+Route::get('home/uplevel/{id}','HomeController@uplevel');

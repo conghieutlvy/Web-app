@@ -4,28 +4,37 @@
 				<div class="col-md-6">
 					<div class="thumbnail">
 						<a class="btn btn-primary" href="home/addQues">Thêm câu hỏi
-							<img alt="Thêm câu hỏi" src="8.jpg">
+							<img alt="Thêm câu hỏi" src="{{url('8.jpg')}}">
 						</a>
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="thumbnail">
-						<a class="btn btn-primary" href="/modifiersques">Sửa câu hỏi
-							<img alt="Sửa câu hỏi" src="9.jpg">
+						<a class="btn btn-primary" href="home/selectques">Sửa câu hỏi
+							<img alt="Sửa câu hỏi" src="{{url('9.jpg')}}">
 						</a>
 					</div>
 				</div>
-				<div class="col-md-6">
+				@if(Auth::user()->level != 0)
+                <div class="col-md-6">
 					<div class="thumbnail">
-						<a class="btn btn-primary" href="/deleteques">Xóa câu hỏi
-							<img alt="Xóa câu hỏi" src="10.jpg">
+						<a class="btn btn-primary" href="home/addadmin">Thêm admin
+							<img alt="" src="{{url('12.jpg')}}">
 						</a>
 					</div>
 				</div>
-				<div class="col-md-6">
+                <div class="col-md-6">
 					<div class="thumbnail">
-						<a class="btn btn-primary" href="#">Ý kiến phản hồi
-							<img alt="Ý kiến phản hồi" src="11.jpg">
+						<a class="btn btn-primary" href="home/selectadmin">Sửa admin
+							<img alt="" src="{{url('13.jpg')}}">
+						</a>
+					</div>
+				</div>
+                @endif
+                <div class="col-md-6">
+					<div class="thumbnail">
+						<a class="btn btn-primary" href="home/feedback">Ý kiến phản hồi
+							<img alt="Ý kiến phản hồi" src="{{url('11.jpg')}}">
 						</a>
 					</div>
 				</div>

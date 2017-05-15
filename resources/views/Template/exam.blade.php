@@ -14,7 +14,7 @@
 	<br /><br />
       
 <form name= "checkform" action="" method="POST" >
-<input onclick="active_num(9);" type="hidden" name="_token" value="{{ csrf_token() }}" />
+<input type="hidden" name="_token" value="{{ csrf_token() }}" />
 <!-- ////////////////////////////////////////////////////// -->      
 		<div class="carousel slide" id="carousel-1"  data-interval="9999999">
 				
