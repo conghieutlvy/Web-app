@@ -28,6 +28,8 @@ Route::get('chooseexam', "WelcomeController@chooseExam");
 
 Route::get('cauhoi', "WelcomeController@cauHoi");
 
+Route::get('feedback','WelcomeController@feedback');
+
 Route::post('doExam', 'DoExamController@showresults');
 
 Route::post('doExam/{id}', 'DoExamController@showresults');
@@ -66,8 +68,6 @@ Route::get('home/addadmin', 'HomeController@addadmin');
 Route::get('home/selectadmin','HomeController@selectadmin');
 
 Route::get('home/modifiersadmin/{id}','HomeController@modifiersadmin');
-
-Route::get('home/feedback', 'HomeController@feedback');
 
 Route::post('home/addQues', 'HomeController@saveques');
 

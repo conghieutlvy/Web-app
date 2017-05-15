@@ -65,4 +65,7 @@ class WelcomeController extends Controller {
 			'dataimg'=>$resultsdbimg
 			]);
 	}
+	public function feedback(){
+		return view('feedback');
+	}
 }
