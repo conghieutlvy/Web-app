@@ -13,7 +13,7 @@
             <th width="400"><center>Tên</center></th>
             <th width="400"><center>Địa chỉ email</center></th>
             <th width="100"><center>Level</center></th>
-            <th width="120"><center>Hành động</center></th>
+            <th width="170"><center>Hành động</center></th>
         </tr>
     <?php
         foreach($data as $admin) {
@@ -42,8 +42,9 @@
         <th><?php
 			if($admin['level']) echo "Super Admin" ; else echo "Admin";?>
         </th>
-        <th> @if(Auth::user()->level != 0)
+        <th> @if((Auth::user()->level != 0) && (Auth::user()->id != $admin->id))
         <center>
+        	@if($admin->level == 0) <a href = "uplevel/<?php echo $admin['id'] ?>" type="button" class="btn btn-success"> Thăng cấp </a> @endif
             <a id = "<?php echo "btdelete_".$admin['id']?>" onclick="confim('<?php echo "modifiersadmin/".$admin['id']?>','<?php echo "btdelete_".$admin['id']?>');" type="button" class="btn btn-danger">
 				Xóa
 			</a></center> 

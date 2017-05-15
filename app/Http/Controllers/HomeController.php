@@ -83,7 +83,7 @@ class HomeController extends Controller
 					if($number == 0) $ques = question::find($idnumber);
 					else $ques = ques_img::find($idnumber);
 				$ques->delete();
-				return view('direct');
+				return redirect('home/selectques');
 			}
 			if($key == 1){
 				if($number == 0) $ques = question::find($idnumber);
@@ -108,11 +108,20 @@ class HomeController extends Controller
 					$q->delete();	
 				$admin->delete();
 			}
-			return view('direct');
+			return redirect('home/selectadmin');
 		}
 		else echo "Không thể xóa";
 	}
-	
+	public function uplevel($id){
+		if((Auth::user()->level != 0) && (Auth::user()->id != $id)){
+			$admin = User::find($id);
+			if($admin != null){
+				$admin->level = 1;
+				$admin->save();
+			}
+		}
+		return redirect('home/selectadmin');
+	}
 	
 	public function saveques(){
 			

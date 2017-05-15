@@ -25,7 +25,7 @@
 				</div>
                 <div class="col-md-6">
 					<div class="thumbnail">
-						<a class="btn btn-primary" href="home/selectadmin">Xóa admin
+						<a class="btn btn-primary" href="home/selectadmin">Sửa admin
 							<img alt="" src="{{url('13.jpg')}}">
 						</a>
 					</div>

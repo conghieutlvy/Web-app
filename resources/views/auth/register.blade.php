@@ -59,13 +59,7 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
-                    <div class = "row">
-                      	<div class="col-md-4 col-md-offset-4 ">
-						<input name="admin" type="radio" value="1" />Super Admin<br />
-                        <input name="admin" type="radio" value="0" checked />Admin<br />
-                        </div>
-                        <br />
-					</div>
+                    
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">

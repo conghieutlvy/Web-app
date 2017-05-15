@@ -70,3 +70,5 @@ Route::get('home/modifiersadmin/{id}','HomeController@modifiersadmin');
 Route::get('home/feedback', 'HomeController@feedback');
 
 Route::post('home/addQues', 'HomeController@saveques');
+
+Route::get('home/uplevel/{id}','HomeController@uplevel');
