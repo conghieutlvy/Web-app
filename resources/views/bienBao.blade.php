@@ -27,7 +27,7 @@
 			</h3>
 			<br> <br> <br>
 			<p style = "text-align: center">
-				<img alt = "Biển báo cấm" src = "BienBaoCam.jpg" }} >
+				<img alt = "Biển báo cấm" src = "{{url('BienBaoCam.jpg')}}" }} >
 			</p>	
 			<a name = "Biennguyhiem"></a> 
 			<br> 
@@ -41,7 +41,7 @@
 			</h3>
 			<br> <br> <br>
 			<p style = "text-align: center">
-				<img alt = "Biển báo nguy hiểm" src = "BienBaoNguyHiem.jpg" >
+				<img alt = "Biển báo nguy hiểm" src = "{{url('BienBaoNguyHiem.jpg')}}" >
 			</p>
 			<a name = "Bienhieulenh"></a>
 			<br> 
@@ -55,7 +55,7 @@
 			</h3>
 			<br> <br> <br>
 			<p style = "text-align: center;">
-				<img alt = "Biển hiệu lệnh" src = "BienHieuLenh.jpg">
+				<img alt = "Biển hiệu lệnh" src = "{{url('BienHieuLenh.jpg')}}">
 			</p>
 			<a name = "Bienchidan"></a>
 			<br> 
@@ -69,7 +69,7 @@
 			</h3>
 			<br> <br> <br>
 			<p style = "text-align: center;">
-				<img alt = "Biển chỉ dẫn" src = "BienChiDan.jpg" >
+				<img alt = "Biển chỉ dẫn" src = "{{url('BienChiDan.jpg')}}" >
 			</p>
 			<a name = "Bienphu"></a>
 			<br> 
@@ -83,7 +83,7 @@
 			</h3>
 			<br> <br> <br>
 			<p style = "text-align: center;">
-				<img alt = "Biển phụ" src = "BienPhu.jpg" >
+				<img alt = "Biển phụ" src = "{{url('BienPhu.jpg')}}" >
 			</p>
 			<a name = "Vachkeduong"></a>
 			<br> 
@@ -97,7 +97,7 @@
 			</h3>
 			<br> <br> <br>
 			<p style = "text-align: center;">
-				<img alt = "Vạch kẻ đường" src = "VachKeDuong.jpg" >
+				<img alt = "Vạch kẻ đường" src = "{{url('VachKeDuong.jpg')}}" >
 			</p>
 
 			</ul> <a href="#" class="btn" type="button">Về đầu trang</a>
