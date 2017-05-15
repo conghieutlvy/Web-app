@@ -6,7 +6,7 @@
 <center><h2> Chọn câu hỏi cần <?php if($key == 0) echo "xóa";
  else echo "sửa" ?></h2></center>
 <br /><br />
-<form name= "checkform" action="modifiersques/<?php echo $key ?>" method="POST" >
+<form name= "checkform" action="" method="POST" >
 {{ csrf_field() }}
 <div class="row">
     <center>

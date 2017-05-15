@@ -59,12 +59,14 @@ Route::get('home/addQues', 'HomeController@addques');
 
 Route::get('home/selectques/{key}', 'HomeController@selectques');
 
-Route::post('home/selectques/modifiersques/{key}', 'HomeController@modifiersques');
-
 Route::get('home/addadmin', 'HomeController@addadmin');
+
+Route::get('home/selectadmin','HomeController@selectadmin');
 
 Route::get('home/feedback', 'HomeController@feedback');
 
 Route::post('home/addQues', 'HomeController@saveques');
 
-Route::post('home/addadmin', 'HomeController@saveadmin');
+Route::post('home/selectques/{key}', 'HomeController@modifiersques');
+
+Route::post('home/selectadmin', 'HomeController@removeadmin');
