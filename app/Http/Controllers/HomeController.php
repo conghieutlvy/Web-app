@@ -61,9 +61,6 @@ class HomeController extends Controller
 			'dataimg'=>$resultsdbimg
 			]);
 	}
-	public function feedback(){
-		return view("feedback");
-	}
 	public function addques()
 	{
 		return view('addQues');
