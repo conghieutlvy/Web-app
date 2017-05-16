@@ -48,6 +48,8 @@ Route::get('admin/dangthi', "HomeController@dangThi");
 Route::get('admin/chooseexam', "HomeController@chooseExam");
 
 Route::get('admin/cauhoi', "HomeController@cauHoi");
+
+Route::get('admin/feedback','HomeController@feedback');
 		
 Route::post('admin/doExam', 'DoExamController@showresults');
 

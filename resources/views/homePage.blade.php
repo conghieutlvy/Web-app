@@ -103,4 +103,21 @@
 					</div>
 				</div>
 			</div>
+            <div class="row">
+				<div class="col-md-4">
+					<div class="thumbnail">
+						<img alt="Các loại biển báo" src="0.jpg">
+						<div class="caption">
+							<h3>
+								Nhận xét trang web
+							</h3>
+							@if(Auth::guest())
+								<a class="btn btn-primary" href="feedback">Xem</a>
+							@else 
+                            	<a class="btn btn-primary" href="admin/feedback">Xem</a>
+                            @endif
+						</div>
+					</div>
+				</div>
+            </div>
 @stop
