@@ -14,6 +14,8 @@
 Route::get('/', function () {
     return view('homePage');
 });
+
+//Route for guest
 Route::get('doExam', 'DoExamController@doexam');
 
 Route::get('doExam/{id}', 'DoExamController@doexamwithid');
@@ -34,7 +36,7 @@ Route::post('doExam', 'DoExamController@showresults');
 
 Route::post('doExam/{id}', 'DoExamController@showresults');
 
-
+//Route for admin
 Route::get('admin/doExam', 'DoExamController@doexam');
 
 Route::get('admin/doExam/{id}', 'DoExamController@doexamwithid');
@@ -55,6 +57,7 @@ Route::post('admin/doExam', 'DoExamController@showresults');
 
 Route::post('admin/doExam/{id}', 'DoExamController@showresults');
 
+//Route for management
 Auth::routes();
 
 Route::get('home', 'HomeController@index')->name('home');

@@ -10,7 +10,8 @@ class DoExamController extends Controller {
 		
 	protected $data = array();
 	protected $results = array();
-
+	
+	//Khoi tao mang luu ket qua
 	public function __construct(){
 		for($i = 0; $i < 10; $i++){
 			$t = $i*4;
@@ -22,20 +23,21 @@ class DoExamController extends Controller {
 		};
 	}
 	public function doexam(){
+		$maxques = question::all()->count();
+		$maxquesimg = ques_img::all()->count();
 		$t = array();
 		for($i = 0; $i<7; $i++) {
 			do{
 				$check = 1;
 				$j =0;
-				$id = mt_rand(1,20);
+				$id = mt_rand(1,$maxques);
 				for(; $j < $i; $j++){
 					if($t[$j] == $id){
 						$check = 0;
 						break;
-					}
-					
+					}	
 				}
-				if($j == $i) {
+				if($j == $i && question::find($id) != null) {
 					$t[$i] = $id;	
 				}
 			}while(!$check);
@@ -47,7 +49,7 @@ class DoExamController extends Controller {
 				do{
 					$check = 1;
 					$j =7;
-					$id = mt_rand(1,10);
+					$id = mt_rand(1,$maxquesimg);
 					for(; $j < $i; $j++){
 						if($t[$j] == $id){
 							$check = 0;
