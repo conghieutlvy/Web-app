@@ -28,18 +28,18 @@ class DoExamController extends Controller {
 		$t = array();
 		for($i = 0; $i<7; $i++) {
 			do{
-				$check = 1;
+				$check = 0;
 				$j =0;
 				$id = mt_rand(1,$maxques);
 				if(question::find($id) != null){
 					for(; $j < $i; $j++){
 						if($t[$j] == $id){
-							$check = 0;
 							break;
 						}	
 					}
 					if($j == $i) {
-						$t[$i] = $id;	
+						$t[$i] = $id;
+						$check = 1;
 					}
 				}
 			}while(!$check);
@@ -49,19 +49,19 @@ class DoExamController extends Controller {
 		}
 			for($i = 7; $i<10; $i++) {
 				do{
-					$check = 1;
+					$check = 0;
 					$j =7;
 					$id = mt_rand(1,$maxquesimg);
 					if(ques_img::find($id) != null){
 						for(; $j < $i; $j++){
 							if($t[$j] == $id){
-								$check = 0;
 								break;
 							}
 							
 						}
 						if($j == $i) {
-							$t[$i] = $id;	
+							$t[$i] = $id;
+							$check = 1;	
 						}
 					}
 				}while(!$check);
