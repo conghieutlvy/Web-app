@@ -95,19 +95,17 @@ class DoExamController extends Controller {
 	public function showresults(){
 		if(isset($_POST['cb']))
 		foreach($_POST['cb'] as $row){
-			$this->data[floor($row/10) + $row%10] = 1;		
+			$this->data[(floor($row/10))*4 + $row%10] = 1;		
 		}
 		for($i = 0; $i<10; $i++) {
-			$temp = $_SESSION["dtb[$i]"];
+			$ques = $_SESSION["dtb[$i]"];
 			$t =$i*4;
-			foreach($temp as $ques){
-				$count = 0;
 				if(($ques["a0"] == $this->data[$t])
-					||($ques["a1"] == $this->data[$t+1])
-					||($ques["a2"] == $this->data[$t+2])
-					||($ques["a3"] == $this->data[$t+3])) $count++;
-				if( $count == 3) $this->results[$i] = 1;
-			}
+					&&($ques["a1"] == $this->data[$t+1])
+					&&($ques["a2"] == $this->data[$t+2])
+					&&($ques["a3"] == $this->data[$t+3])) 
+					$this->results[$i] = 1;
+			
 		}
 		return view('resultsPage')->with('res', $this->results);
 	}
