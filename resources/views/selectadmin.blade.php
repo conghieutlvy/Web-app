@@ -44,8 +44,11 @@
         </th>
         <th> @if((Auth::user()->level != 0) && (Auth::user()->id != $admin->id))
         <center>
-        	@if($admin->level == 0) <a href = "uplevel/<?php echo $admin['id'] ?>" type="button" class="btn btn-success"> Thăng cấp </a> @endif
-            <a id = "<?php echo "btdelete_".$admin['id']?>" onclick="confim('<?php echo "modifiersadmin/".$admin['id']?>','<?php echo "btdelete_".$admin['id']?>');" type="button" class="btn btn-danger">
+        	@if($admin->level == 0) <a id = "<?php echo "btup_".$admin['id']?>" onclick = "confim('Bạn có thực sự muốn thăng Admin này lên Super Admin thay cho bạn?\n Lưu ý: Bạn sẽ bị giáng cấp xuống Admin.','uplevel/<?php echo $admin['id'] ?>','<?php echo "btup_".$admin['id']?>');" 
+            type="button" class="btn btn-success"> Thăng cấp </a> 
+            @endif
+            
+            <a id = "<?php echo "btdelete_".$admin['id']?>" onclick="confim('Bạn có thực sự muốn xóa? \n\nLưu ý: Toàn bộ câu hỏi liên quan đến admin này đều bị xóa. ','<?php echo "modifiersadmin/".$admin['id']?>','<?php echo "btdelete_".$admin['id']?>');" type="button" class="btn btn-danger">
 				Xóa
 			</a></center> 
         @endif
@@ -54,10 +57,10 @@
 	}
 ?>
 <script language="javascript">
-	function confim(st,id){
-		var check = confirm("Bạn có thực sự muốn xóa? \n\nLưu ý: Toàn bộ câu hỏi liên quan đến admin này đều bị xóa. ");
+	function confim(st,lk,id){
+		var check = confirm(st);
 		if(check)
-			document.getElementById(id).setAttribute("href",st);
+			document.getElementById(id).setAttribute("href",lk);
 		else document.getElementById(id).removeAttribute("href");
 	}
 </script>

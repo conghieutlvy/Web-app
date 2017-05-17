@@ -31,7 +31,7 @@
 							<h3>
 								Thêm admin
 							</h3>
-							<a class="btn btn-primary" href="home/addQues">Thêm</a>
+							<a class="btn btn-primary" href="register">Thêm</a>
 						</div>
 					</div>
 				</div>
@@ -42,7 +42,7 @@
 							<h3>
 								Sửa admin
 							</h3>
-							<a class="btn btn-primary" href="home/addQues">Sửa</a>
+							<a class="btn btn-primary" href="home/selectadmin">Sửa</a>
 						</div>
 					</div>
 				</div>

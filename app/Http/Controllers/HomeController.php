@@ -115,12 +115,14 @@ class HomeController extends Controller
 	public function uplevel($id){
 		if((Auth::user()->level != 0) && (Auth::user()->id != $id)){
 			$admin = User::find($id);
-			if($admin != null){
+			if($admin != null){	
 				$admin->level = 1;
 				$admin->save();
+				Auth::user()->level = 0;
+				Auth::user()->save();
 			}
 		}
-		return redirect('home/selectadmin');
+		return redirect('home');
 	}
 	
 	public function saveques(){
