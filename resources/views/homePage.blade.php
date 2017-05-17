@@ -12,9 +12,9 @@
 								Ôn thi với các câu hỏi tổng hợp từ các mức độ khác nhau.
 							</div>
 							@if(Auth::guest())
-								<a class="btn btn-primary" href="doExam">Bắt đầu</a>
+								<a class="btn btn-primary" href="doExam" id ="dengaunhien">Bắt đầu</a>
                             @else 
-                            	<a class="btn btn-primary" href="admin/doExam">Bắt đầu</a>
+                            	<a class="btn btn-primary" href="admin/doExam" id ="dengaunhien">Bắt đầu</a>
 							@endif
 						</div>
 					</div>
@@ -30,9 +30,9 @@
 								Ôn thi với các bộ câu hỏi tương ứng với trình độ khác nhau.
 							</div>
 							@if(Auth::guest())
-								<a class="btn btn-primary" href="chooseexam">Bắt đầu</a> 
+								<a class="btn btn-primary" href="chooseexam" id ="bode">Bắt đầu</a> 
                             @else 
-                            	<a class="btn btn-primary" href="admin/chooseexam">Bắt đầu</a> 
+                            	<a class="btn btn-primary" href="admin/chooseexam" id ="bode">Bắt đầu</a> 
 							@endif
 						</div>
 					</div>
@@ -48,9 +48,9 @@
 								Tổng hợp kết quả các câu hỏi.
 							</div>
 							@if(Auth::guest())
-								<a class="btn btn-primary" href="cauhoi">Xem</a>
+								<a class="btn btn-primary" href="cauhoi" id="cauhoi">Xem</a>
                             @else
-                            	<a class="btn btn-primary" href="admin/cauhoi">Xem</a>
+                            	<a class="btn btn-primary" href="admin/cauhoi" id="cauhoi">Xem</a>
                             @endif
 							</p>
 						</div>
@@ -66,9 +66,9 @@
 								Các loại biển báo
 							</h3>
 							@if(Auth::guest())
-								<a class="btn btn-primary" href="bienbao">Xem</a>
+								<a class="btn btn-primary" href="bienbao" id="bienbao">Xem</a>
 							@else 
-                            	<a class="btn btn-primary" href="admin/bienbao">Xem</a>
+                            	<a class="btn btn-primary" href="admin/bienbao" id="bienbao">Xem</a>
                             @endif
 						</div>
 					</div>
@@ -81,8 +81,8 @@
 								Mẹo thi
 							</h3>
 							@if(Auth::guest())
-								<a class="btn btn-primary" href="meo">Xem</a>	
-                            @else  <a class="btn btn-primary" href="admin/meo">Xem</a>	
+								<a class="btn btn-primary" href="meo" id="meo">Xem</a>	
+                            @else  <a class="btn btn-primary" href="admin/meo" id="meo">Xem</a>	
 							@endif
                             
 						</div>
@@ -96,8 +96,8 @@
 								Các dạng thi
 							</h3>
 							@if(Auth::guest())
-								<a class="btn btn-primary" href="dangthi">Xem</a>	
-                            @else  <a class="btn btn-primary" href="admin/dangthi">Xem</a>	
+								<a class="btn btn-primary" href="dangthi" id="dangthi">Xem</a>	
+                            @else  <a class="btn btn-primary" href="admin/dangthi" id="dangthi">Xem</a>	
 							@endif
 						</div>
 					</div>
