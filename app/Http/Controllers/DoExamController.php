@@ -31,14 +31,16 @@ class DoExamController extends Controller {
 				$check = 1;
 				$j =0;
 				$id = mt_rand(1,$maxques);
-				for(; $j < $i; $j++){
-					if($t[$j] == $id){
-						$check = 0;
-						break;
-					}	
-				}
-				if($j == $i && question::find($id) != null) {
-					$t[$i] = $id;	
+				if(question::find($id) != null){
+					for(; $j < $i; $j++){
+						if($t[$j] == $id){
+							$check = 0;
+							break;
+						}	
+					}
+					if($j == $i) {
+						$t[$i] = $id;	
+					}
 				}
 			}while(!$check);
 			$temp = question::find($id);
@@ -50,15 +52,17 @@ class DoExamController extends Controller {
 					$check = 1;
 					$j =7;
 					$id = mt_rand(1,$maxquesimg);
-					for(; $j < $i; $j++){
-						if($t[$j] == $id){
-							$check = 0;
-							break;
+					if(ques_img::find($id) != null){
+						for(; $j < $i; $j++){
+							if($t[$j] == $id){
+								$check = 0;
+								break;
+							}
+							
 						}
-						
-					}
-					if($j == $i) {
-						$t[$i] = $id;	
+						if($j == $i) {
+							$t[$i] = $id;	
+						}
 					}
 				}while(!$check);
 				$temp = ques_img::find($id);;
