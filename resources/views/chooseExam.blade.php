@@ -6,18 +6,18 @@
     <br />
     <br />
     <div class="row">	
-    	<center><a href="doExam/0"> 
+    	<center><a href="doExam/0" id="1"> 
    			<img src="{{url('so1.jpg')}}" alt="" border="1"/> 
 		</a>
-        <a href="doExam/1"> 
+        <a href="doExam/1" id="2"> 
    			<img src="{{url('so2.jpg')}}" alt="" border="1"/> 
 		</a></center>
      </div>
      <div class="row">	
-    	<center><a href="doExam/2"> 
+    	<center><a href="doExam/2" id="3"> 
    			<img src="{{url('so3.jpg')}}" alt="" border="1"/> 
 		</a>
-        <a href="doExam/3"> 
+        <a href="doExam/3" id="4"> 
    			<img src="{{url('so4.jpg')}}" alt="" border="1"/> 
 		</a></center>
      </div>
