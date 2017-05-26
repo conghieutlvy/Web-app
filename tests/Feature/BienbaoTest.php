@@ -22,6 +22,11 @@ class BienbaoTest extends TestCase
 
     public function testView()
     {
+        /**
+         * Scenario: Bienbao_page
+         * Given I am on "http://thithulaixe.esy.es/bienbao"
+         * Then I should see "Các loại biển báo giao thông đường bộ"
+        **/
         $this->get('/bienbao')->assertSee('Các loại biển báo giao thông đường bộ');
     }
 }

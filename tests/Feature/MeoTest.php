@@ -22,6 +22,11 @@ class MeoTest extends TestCase
     
     public function testView()
     {
+        /**
+         * Scenario: View Meo_page
+         * Given I am on "http://thithulaixe.esy.es/meo"
+         * Then I should see "CÁC MẸO GHI NHỚ" 
+        **/
         $this->get('/meo')->assertSee('CÁC MẸO GHI NHỚ');
     }
 

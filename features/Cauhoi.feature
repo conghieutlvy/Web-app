@@ -4,5 +4,5 @@ Feature: Cauhoi_page
 	I can see cauhoi_page
 	
 	Scenario: View
-		Given I am on "/cauhoi"
+		Given I am on "http://thithulaixe.esy.es/cauhoi"
 		Then I should see "Danh sách câu hỏi có trong đề thi"
