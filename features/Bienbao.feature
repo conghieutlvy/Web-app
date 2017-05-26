@@ -4,10 +4,10 @@ Feature: Bienbao_page
 	I can see bienbao_page and do something
 	
 	Scenario: View bienbao_page
-		Given I am on "/bienbao"
+		Given I am on "http://thithulaixe.esy.es/bienbao"
 		Then I should see "Các loại biển báo giao thông đường bộ"
 
 	Scenario: Go to a paragraph in Page
-		Given I am on "/bienbao"
+		Given I am on "http://thithulaixe.esy.es/bienbao"
 		When I follow "Biển báo cấm"
-		Then the url should match "/bienbao#Biencam"
+		Then I should be on "http://thithulaixe.esy.es/bienbao#Biencam"

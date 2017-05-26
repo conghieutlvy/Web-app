@@ -22,6 +22,11 @@ class DangthiTest extends TestCase
     
     public function testView()
     {
+        /**
+         * Scenario: View Dangthi_page
+         * Given I am on "http://thithulaixe.esy.es/dangthi"
+         * Then I should see "Các dạng thi lái xe"
+        **/
         $this->get('/dangthi')->assertSee('Các dạng thi lái xe');
     }
 }

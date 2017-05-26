@@ -4,13 +4,13 @@ Feature: Thingaunhien_page
 	I can begin a random test
 	
 	Scenario: Go to doExam_page
-		Given I am on the homepage
+		Given I am on "http://thithulaixe.esy.es/"
 		When I follow "dengaunhien"
-		Then the url should match "/doExam"
+		Then I should be on "http://thithulaixe.esy.es/doExam"
 		And I should see "Bộ đề thi ngẫu nhiên"
 
 	Scenario: Finish test
-		Given I am on "/doExam"
+		Given I am on "http://thithulaixe.esy.es/doExam"
 		When I follow "Nộp bài"
-		Then the url should match "/doExam"
+		Then I should be on "http://thithulaixe.esy.es/doExam"
 		And I should see "Kết quả bài thi"

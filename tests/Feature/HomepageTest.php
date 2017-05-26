@@ -22,12 +22,13 @@ class HomepageTest extends TestCase
     
     public function testView()
     {
+        /**
+         * Scenario: View home_page
+         * Given I am on "http://thithulaixe.esy.es/"
+         * Then I should see "Đề ngẫu nhiên"
+         * And I should see "Thi theo bộ đề"
+        **/
         $this->get('/')->assertSee('Đề ngẫu nhiên');
         $this->get('/')->assertSee('Thi theo bộ đề');
-    }
-
-    public function testChangToMeo()
-    {
-
     }
 }

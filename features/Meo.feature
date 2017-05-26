@@ -4,10 +4,10 @@ Feature: Meo_page
 	I can see meo_page and do something
 	
 	Scenario: View
-		Given I am on "/meo"
+		Given I am on "http://thithulaixe.esy.es/meo"
 		Then I should see "CÁC MẸO GHI NHỚ"
 
 	Scenario: Go to a paragraph in Page
-		Given I am on "/meo"
+		Given I am on "http://thithulaixe.esy.es/meo"
 		When I follow "PHẦN KHÁI NIỆM"
-		Then the url should match "/meo#khainiem"
+		Then I should be on "http://thithulaixe.esy.es/meo#khainiem"
